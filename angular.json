@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "miMercado"
+    }
+  },
+  "defaultProject": "miMercado",
+  "cli": {
+    "analytics": false
+  }
 }
