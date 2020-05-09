@@ -4,16 +4,16 @@ import {
   ActivatedRouteSnapshot,
   RouterStateSnapshot,
   UrlTree,
+  Router,
 } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { map, tap } from 'rxjs/operators';
-import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
-export class LoginGuard implements CanActivate {
+export class NoLoginGuard implements CanActivate {
   constructor(private afAuth: AngularFireAuth, private router: Router) {}
 
   canActivate(
@@ -21,10 +21,10 @@ export class LoginGuard implements CanActivate {
     state: RouterStateSnapshot
   ): Observable<boolean | UrlTree> {
     return this.afAuth.user.pipe(
-      map((user) => !!user), // output: boolean => isLogin
-      tap((isLogin) => {
-        if (!isLogin) {
-          this.router.navigate(['login']);
+      map((user) => !user),
+      tap((isNoLogin) => {
+        if (!isNoLogin) {
+          this.router.navigate(['home']);
         }
       })
     );
