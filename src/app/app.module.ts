@@ -15,11 +15,13 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { LoadDirective } from './directives/load.directive';
+import { MatIconModule } from '@angular/material/icon';
 
 const materialModules = [
   MatInputModule,
   MatButtonModule,
   MatProgressSpinnerModule,
+  MatIconModule,
 ];
 
 @NgModule({
