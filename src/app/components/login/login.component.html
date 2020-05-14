@@ -1,8 +1,10 @@
-<h1 class="title">Login</h1>
+<h1 class="title">Welcome Back</h1>
+<p class="sub-title">Sign to continue</p>
 
 <form [formGroup]="loginForm" (ngSubmit)="goToLogin()" class="login-form">
   <mat-form-field appearance="outline">
     <mat-label>Email</mat-label>
+    <mat-icon matPrefix class="icon">email</mat-icon>
     <input
       matInput
       type="text"
@@ -14,10 +16,11 @@
 
   <mat-form-field appearance="outline">
     <mat-label>Password</mat-label>
+    <mat-icon matPrefix class="icon">lock</mat-icon>
     <input
       matInput
       type="password"
-      placeholder="correo@corre.com"
+      placeholder="*** *** ***"
       formControlName="pass"
     />
     <mat-error>{{ getError(loginForm.get("pass")) }}</mat-error>
@@ -28,7 +31,11 @@
     [appLoad]="isLoad"
     color="primary"
     [disabled]="loginForm.invalid || isLoad"
-    name="Entrar"
+    name="Login"
   ></button>
   <mat-error class="login-error">{{ error }}</mat-error>
 </form>
+<p class="create">
+  Don't have account?
+  <button mat-button color="primary">create a new account</button>
+</p>
