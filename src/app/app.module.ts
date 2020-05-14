@@ -10,9 +10,26 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 import { HomeComponent } from './components/home/home.component';
 import { RegisterComponent } from './components/register/register.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { LoadDirective } from './directives/load.directive';
+
+const materialModules = [
+  MatInputModule,
+  MatButtonModule,
+  MatProgressSpinnerModule,
+];
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, HomeComponent, RegisterComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    HomeComponent,
+    RegisterComponent,
+    LoadDirective,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -20,6 +37,8 @@ import { RegisterComponent } from './components/register/register.component';
     FormsModule,
     AngularFireModule.initializeApp(environment.fire),
     AngularFireAuthModule,
+    BrowserAnimationsModule,
+    ...materialModules,
   ],
   providers: [],
   bootstrap: [AppComponent],
