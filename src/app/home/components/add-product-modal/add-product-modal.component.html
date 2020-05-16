@@ -21,7 +21,7 @@
     <input type="text" matInput formControlName="quantity" />
   </mat-form-field>
 
-  <button mat-raised-button color="primary" [disabled]="saveForm.disable()">
+  <button mat-raised-button color="primary" [disabled]="saveForm.invalid">
     save
   </button>
 </form>
