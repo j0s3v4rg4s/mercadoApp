@@ -10,7 +10,9 @@ import { AddProductModalComponent } from '../add-product-modal/add-product-modal
 export class HomeComponent implements OnInit {
   constructor(private dialog: MatDialog) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.dialog.open(AddProductModalComponent);
+  }
 
   openDialogAddProduct() {
     this.dialog.open(AddProductModalComponent);
