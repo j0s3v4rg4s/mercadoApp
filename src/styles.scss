@@ -5,6 +5,11 @@ body,
 html {
   margin: 0;
   font-family: "Roboto", sans-serif;
+  background-color: #f7f7f7;
+}
+
+:root {
+  --gray-color: #717171;
 }
 
 .btn-primary {
@@ -51,4 +56,15 @@ body {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.title {
+  font-size: 30px;
+  color: #3f50b5;
+  font-weight: bold;
+  margin: 0;
+}
+
+.center {
+  text-align: center;
 }
