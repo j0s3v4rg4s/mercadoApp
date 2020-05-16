@@ -1,13 +1,44 @@
-<div class="container">
-  <h1 class="title">Registrate</h1>
-  <form class="form" [formGroup]="registerForm" (ngSubmit)="registerUser()">
-    <label for="email">Email</label>
-    <input type="text" formControlName="email" id="email" />
-    <label for="pass">Contraseña</label>
-    <input type="password" formControlName="password" id="pass" />
-    <button class="register-btn" [disabled]="registerForm.invalid">
-      Registrame
-    </button>
-    <span *ngIf="!!error"> {{ error }}</span>
-  </form>
-</div>
+<button
+  mat-icon-button
+  class="register-back"
+  color="primary"
+  [routerLink]="loginPath"
+>
+  <mat-icon>keyboard_backspace</mat-icon>
+</button>
+
+<h1 class="title center">Create Account</h1>
+<p class="register-subtitle center">Create a new account</p>
+
+<form
+  [formGroup]="registerForm"
+  class="register-form"
+  (ngSubmit)="registerUser()"
+>
+  <mat-form-field appearance="outline">
+    <mat-label>Name</mat-label>
+    <input type="text" matInput formControlName="name" />
+    <mat-error>{{ getError(registerForm.get("name")) }}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Email</mat-label>
+    <input type="email" matInput formControlName="email" />
+    <mat-error>{{ getError(registerForm.get("email")) }}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Password</mat-label>
+    <input type="password" matInput formControlName="password" />
+    <mat-error>{{ getError(registerForm.get("email")) }}</mat-error>
+  </mat-form-field>
+
+  <button
+    [appLoad]="load"
+    name="Create account"
+    mat-raised-button
+    color="primary"
+    [disabled]="registerForm.invalid"
+  ></button>
+  <mat-error>{{ error }}</mat-error>
+</form>

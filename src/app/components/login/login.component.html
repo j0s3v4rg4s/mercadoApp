@@ -35,7 +35,10 @@
   ></button>
   <mat-error class="login-error">{{ error }}</mat-error>
 </form>
+
 <p class="create">
   Don't have account?
-  <button mat-button color="primary">create a new account</button>
+  <a [routerLink]="registerPath" mat-button color="primary">
+    create a new account
+  </a>
 </p>

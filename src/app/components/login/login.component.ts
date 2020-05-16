@@ -15,10 +15,9 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  constador = 10;
   error = '';
-
   isLoad = false;
+  registerPath = '/register';
 
   constructor(
     private formBuilder: FormBuilder,
