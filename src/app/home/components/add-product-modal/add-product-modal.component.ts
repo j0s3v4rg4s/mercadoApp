@@ -3,6 +3,7 @@ import { AngularFireDatabase } from '@angular/fire/database';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { take } from 'rxjs/operators';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-add-product-modal',
@@ -15,7 +16,8 @@ export class AddProductModalComponent implements OnInit {
   constructor(
     private db: AngularFireDatabase,
     formBuilder: FormBuilder,
-    private afAuth: AngularFireAuth
+    private afAuth: AngularFireAuth,
+    private dialogRef: MatDialogRef<AddProductModalComponent>
   ) {
     this.saveForm = formBuilder.group({
       name: ['', Validators.required],
@@ -32,7 +34,8 @@ export class AddProductModalComponent implements OnInit {
       const uid = this.db.createPushId();
       this.db
         .object(`products/${user.uid}/${uid}`)
-        .set({ name, description, quantity, uid });
+        .set({ name, description, quantity, uid })
+        .then(() => this.dialogRef.close());
     });
   }
 }
