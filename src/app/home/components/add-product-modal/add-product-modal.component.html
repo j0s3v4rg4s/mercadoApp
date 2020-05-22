@@ -18,7 +18,7 @@
 
   <mat-form-field>
     <mat-label>Initial quantity</mat-label>
-    <input type="text" matInput formControlName="quantity" />
+    <input type="text" matInput formControlName="quantity" mask="0*" />
   </mat-form-field>
 
   <button mat-raised-button color="primary" [disabled]="saveForm.invalid">
