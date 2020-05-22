@@ -15,6 +15,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { LoadDirective } from './directives/load.directive';
 import { MatIconModule } from '@angular/material/icon';
+import { NgxMaskModule } from 'ngx-mask';
 
 const materialModules = [
   MatInputModule,
@@ -39,6 +40,7 @@ const materialModules = [
     AngularFireAuthModule,
     BrowserAnimationsModule,
     ...materialModules,
+    NgxMaskModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

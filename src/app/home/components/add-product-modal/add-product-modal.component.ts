@@ -34,7 +34,7 @@ export class AddProductModalComponent implements OnInit {
       const uid = this.db.createPushId();
       this.db
         .object(`products/${user.uid}/${uid}`)
-        .set({ name, description, quantity, uid })
+        .set({ name, description, quantity: Number(quantity), uid })
         .then(() => this.dialogRef.close());
     });
   }

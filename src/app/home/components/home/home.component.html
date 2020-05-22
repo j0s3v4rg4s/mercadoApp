@@ -5,6 +5,10 @@
   </button>
 </mat-toolbar>
 
+<div *ngFor="let item of $productList | async">
+  {{ item | json }}
+</div>
+
 <button mat-fab class="add-button" (click)="openDialogAddProduct()">
   <mat-icon>add</mat-icon>
 </button>

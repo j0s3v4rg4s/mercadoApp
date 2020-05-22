@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { NgxMaskModule } from 'ngx-mask';
+
 // Material modules
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -27,6 +29,7 @@ import { AddProductModalComponent } from './components/add-product-modal/add-pro
     MatInputModule,
     AngularFireDatabaseModule,
     ReactiveFormsModule,
+    NgxMaskModule,
   ],
 })
 export class HomeModule {}
