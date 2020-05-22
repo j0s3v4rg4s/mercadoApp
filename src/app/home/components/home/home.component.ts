@@ -30,6 +30,25 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  addQuantity(product: ProductModel) {
+    this.afAuth.user.pipe(take(1)).subscribe((user) => {
+      this.db
+        .object(`products/${user.uid}/${product.uid}`)
+        .update({ quantity: product.quantity + 1 });
+    });
+  }
+
+  removeQuantity(product: ProductModel) {
+    if (product.quantity === 0) {
+      return;
+    }
+    this.afAuth.user.pipe(take(1)).subscribe((user) => {
+      this.db
+        .object(`products/${user.uid}/${product.uid}`)
+        .update({ quantity: product.quantity - 1 });
+    });
+  }
+
   openDialogAddProduct() {
     this.dialog.open(AddProductModalComponent);
   }

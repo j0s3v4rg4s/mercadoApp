@@ -11,13 +11,13 @@
       <p class="product-list__title">{{ item.name }}</p>
       <span class="product-list__description">{{ item.description }}</span>
     </div>
-    <button mat-icon-button>
+    <button mat-icon-button color="primary" (click)="removeQuantity(item)">
       <mat-icon>remove</mat-icon>
     </button>
 
-    <span>{{ item.quantity }}</span>
+    <span class="product-count">{{ item.quantity }}</span>
 
-    <button mat-icon-button>
+    <button mat-icon-button color="primary" (click)="addQuantity(item)">
       <mat-icon>add</mat-icon>
     </button>
   </div>
