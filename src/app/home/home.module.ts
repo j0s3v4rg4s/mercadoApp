@@ -4,6 +4,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { NgxMaskModule } from 'ngx-mask';
+import { ShareModule } from '../share/share.module';
 
 // Material modules
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -30,6 +31,7 @@ import { AddProductModalComponent } from './components/add-product-modal/add-pro
     AngularFireDatabaseModule,
     ReactiveFormsModule,
     NgxMaskModule,
+    ShareModule,
   ],
 })
 export class HomeModule {}

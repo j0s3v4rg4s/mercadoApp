@@ -1,28 +1,19 @@
-<mat-toolbar color="primary">
-  <span class="toolbar-title">My products</span>
-  <button mat-icon-button>
-    <mat-icon>menu</mat-icon>
-  </button>
-</mat-toolbar>
+<app-layout title="My products" (addClick)="openDialogAddProduct()">
+  <div class="content">
+    <div *ngFor="let item of $productList | async" class="product-list">
+      <div>
+        <p class="product-list__title">{{ item.name }}</p>
+        <span class="product-list__description">{{ item.description }}</span>
+      </div>
+      <button mat-icon-button color="primary" (click)="removeQuantity(item)">
+        <mat-icon>remove</mat-icon>
+      </button>
 
-<div class="content">
-  <div *ngFor="let item of $productList | async" class="product-list">
-    <div>
-      <p class="product-list__title">{{ item.name }}</p>
-      <span class="product-list__description">{{ item.description }}</span>
+      <span class="product-count">{{ item.quantity }}</span>
+
+      <button mat-icon-button color="primary" (click)="addQuantity(item)">
+        <mat-icon>add</mat-icon>
+      </button>
     </div>
-    <button mat-icon-button color="primary" (click)="removeQuantity(item)">
-      <mat-icon>remove</mat-icon>
-    </button>
-
-    <span class="product-count">{{ item.quantity }}</span>
-
-    <button mat-icon-button color="primary" (click)="addQuantity(item)">
-      <mat-icon>add</mat-icon>
-    </button>
   </div>
-</div>
-
-<button mat-fab class="add-button" (click)="openDialogAddProduct()">
-  <mat-icon>add</mat-icon>
-</button>
+</app-layout>
