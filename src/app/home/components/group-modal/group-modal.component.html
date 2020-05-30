@@ -3,9 +3,16 @@
 <div class="content">
   <mat-form-field>
     <mat-label>Select a name</mat-label>
-    <input type="text" matInput />
+    <input type="text" matInput [(ngModel)]="nameGroup" />
   </mat-form-field>
-  <button mat-raised-button color="primary">create</button>
+  <button
+    mat-raised-button
+    color="primary"
+    [disabled]="loadAdd || !nameGroup"
+    (click)="createGroup()"
+  >
+    create
+  </button>
 </div>
 
 <div class="content-divisor">

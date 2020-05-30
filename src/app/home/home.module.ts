@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { NgxMaskModule } from 'ngx-mask';
 import { ShareModule } from '../share/share.module';
@@ -21,7 +21,12 @@ import { GroupComponent } from './components/group/group.component';
 import { GroupModalComponent } from './components/group-modal/group-modal.component';
 
 @NgModule({
-  declarations: [HomeComponent, AddProductModalComponent, GroupComponent, GroupModalComponent],
+  declarations: [
+    HomeComponent,
+    AddProductModalComponent,
+    GroupComponent,
+    GroupModalComponent,
+  ],
   imports: [
     CommonModule,
     HomeRoutingModule,
@@ -32,6 +37,7 @@ import { GroupModalComponent } from './components/group-modal/group-modal.compon
     MatInputModule,
     AngularFireDatabaseModule,
     ReactiveFormsModule,
+    FormsModule,
     NgxMaskModule,
     ShareModule,
   ],
