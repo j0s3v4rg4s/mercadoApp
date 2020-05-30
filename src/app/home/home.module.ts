@@ -17,9 +17,11 @@ import { MatInputModule } from '@angular/material/input';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './components/home/home.component';
 import { AddProductModalComponent } from './components/add-product-modal/add-product-modal.component';
+import { GroupComponent } from './components/group/group.component';
+import { GroupModalComponent } from './components/group-modal/group-modal.component';
 
 @NgModule({
-  declarations: [HomeComponent, AddProductModalComponent],
+  declarations: [HomeComponent, AddProductModalComponent, GroupComponent, GroupModalComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
