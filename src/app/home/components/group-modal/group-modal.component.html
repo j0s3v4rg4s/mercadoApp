@@ -23,7 +23,14 @@
 <div class="content">
   <mat-form-field>
     <mat-label>Enter the group code</mat-label>
-    <input type="text" matInput />
+    <input type="text" matInput [(ngModel)]="codeGroup" />
   </mat-form-field>
-  <button mat-raised-button color="primary">join</button>
+  <button
+    mat-raised-button
+    color="primary"
+    [disabled]="loadAdd || !codeGroup"
+    (click)="joinGroup()"
+  >
+    join
+  </button>
 </div>

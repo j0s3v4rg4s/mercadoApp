@@ -10,6 +10,7 @@ import { take } from 'rxjs/operators';
 })
 export class GroupModalComponent implements OnInit {
   nameGroup: string;
+  codeGroup: string;
   loadAdd = false;
 
   constructor(
@@ -26,14 +27,16 @@ export class GroupModalComponent implements OnInit {
       await this.addGroupToUser(random, user.uid);
       this.nameGroup = null;
       this.loadAdd = false;
+    });
+  }
 
-      // without async await
-      // this.generateNodeGroup(this.nameGroup, user.uid).then((random) => {
-      //   this.addGroupToUser(random, user.uid).then(() => {
-      //     this.nameGroup = null;
-      //     this.loadAdd = false;
-      //   });
-      // });
+  joinGroup() {
+    this.loadAdd = true;
+    this.afAuth.user.pipe(take(1)).subscribe(async (user) => {
+      await this.db.object(`user/${user.uid}/groups`).update({
+        [this.codeGroup]: true,
+      });
+      this.loadAdd = false;
     });
   }
 

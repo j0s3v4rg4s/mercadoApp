@@ -1,3 +1,9 @@
 <app-layout title="My Group" (addClick)="openDialog()">
-  <h1>hola</h1>
+  <div *ngFor="let item of $listGroup | async" class="content">
+    <span>{{ item.name }}</span>
+    <span class="id-group">{{ item.uid }}</span>
+    <button mat-icon-button>
+      <mat-icon>keyboard_arrow_right</mat-icon>
+    </button>
+  </div>
 </app-layout>
