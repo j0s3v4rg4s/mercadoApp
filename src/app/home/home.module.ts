@@ -19,6 +19,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AddProductModalComponent } from './components/add-product-modal/add-product-modal.component';
 import { GroupComponent } from './components/group/group.component';
 import { GroupModalComponent } from './components/group-modal/group-modal.component';
+import { GroupInfoComponent } from './components/group-info/group-info.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { GroupModalComponent } from './components/group-modal/group-modal.compon
     AddProductModalComponent,
     GroupComponent,
     GroupModalComponent,
+    GroupInfoComponent,
   ],
   imports: [
     CommonModule,

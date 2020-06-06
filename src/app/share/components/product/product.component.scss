@@ -1,0 +1,17 @@
+.product-list {
+  display: grid;
+  grid-template-columns: auto max-content minmax(20px, max-content) max-content;
+  align-items: center;
+  border-bottom: 1px solid #d0d0d0;
+  padding: 10px 0;
+}
+
+.product-list__title {
+  margin: 0;
+  font-size: 16px;
+}
+
+.product-list__description {
+  color: rgb(128, 128, 128);
+  font-size: 12px;
+}

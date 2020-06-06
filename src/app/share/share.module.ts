@@ -5,9 +5,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
+import { ProductComponent } from './components/product/product.component';
 
 @NgModule({
-  declarations: [LayoutComponent],
+  declarations: [LayoutComponent, ProductComponent],
   imports: [
     CommonModule,
     MatIconModule,
@@ -15,6 +16,6 @@ import { RouterModule } from '@angular/router';
     MatToolbarModule,
     RouterModule,
   ],
-  exports: [LayoutComponent],
+  exports: [LayoutComponent, ProductComponent],
 })
 export class ShareModule {}
