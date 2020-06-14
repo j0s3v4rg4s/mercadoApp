@@ -1,0 +1,27 @@
+<mat-list class="menu">
+  <mat-list-item class="menu__item">
+    <mat-icon class="menu__icon">face</mat-icon>
+    <a routerLink="/profile" class="menu__link">Profile</a>
+  </mat-list-item>
+
+  <mat-list-item class="menu__item">
+    <mat-icon class="menu__icon">person</mat-icon>
+    <a routerLink="/home/personal" class="menu__link">My products</a>
+  </mat-list-item>
+
+  <mat-list-item class="menu__item">
+    <mat-icon class="menu__icon">group</mat-icon>
+    <a routerLink="/home/group" class="menu__link">Groups</a>
+  </mat-list-item>
+
+  <mat-divider></mat-divider>
+
+  <mat-list-item>
+    <div class="menu__logout">
+      <button mat-button color="primary" (click)="logout()">
+        <mat-icon>exit_to_app</mat-icon>
+        Log out
+      </button>
+    </div>
+  </mat-list-item>
+</mat-list>

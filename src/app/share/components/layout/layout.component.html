@@ -1,10 +1,22 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav mode="over" position="end" #side>
+    <app-menu></app-menu>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="toolbar">
+      <span class="toolbar-title">{{ title }}</span>
+      <button mat-icon-button (click)="side.open()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<!--
 <div class="content">
-  <mat-toolbar color="primary" class="toolbar">
-    <span class="toolbar-title">{{ title }}</span>
-    <button mat-icon-button>
-      <mat-icon>menu</mat-icon>
-    </button>
-  </mat-toolbar>
+
 
   <ng-content></ng-content>
 </div>
@@ -33,4 +45,4 @@
   >
     <mat-icon>group</mat-icon>
   </button>
-</footer>
+</footer> -->

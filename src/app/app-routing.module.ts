@@ -22,6 +22,12 @@ const routes: Routes = [
     canActivate: [NoLoginGuard],
   },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
+  {
+    path: 'profile',
+    loadChildren: () =>
+      import('./profile/profile.module').then((m) => m.ProfileModule),
+    canActivate: [LoginGuard],
+  },
 ];
 
 @NgModule({

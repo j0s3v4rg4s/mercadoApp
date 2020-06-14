@@ -6,15 +6,20 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
 import { ProductComponent } from './components/product/product.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MenuComponent } from './components/menu/menu.component';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
-  declarations: [LayoutComponent, ProductComponent],
+  declarations: [LayoutComponent, ProductComponent, MenuComponent],
   imports: [
     CommonModule,
     MatIconModule,
     MatButtonModule,
     MatToolbarModule,
     RouterModule,
+    MatSidenavModule,
+    MatListModule,
   ],
   exports: [LayoutComponent, ProductComponent],
 })

@@ -1,0 +1,25 @@
+.menu {
+  padding: 15px 0;
+  box-sizing: border-box;
+  width: 250px;
+
+  &__item {
+    display: flex;
+  }
+
+  &__icon {
+    margin: 10px;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: rgb(78, 78, 78);
+    flex-grow: 1;
+  }
+
+  &__logout {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+}
