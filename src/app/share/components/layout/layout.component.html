@@ -1,0 +1,36 @@
+<div class="content">
+  <mat-toolbar color="primary" class="toolbar">
+    <span class="toolbar-title">{{ title }}</span>
+    <button mat-icon-button>
+      <mat-icon>menu</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <ng-content></ng-content>
+</div>
+
+<footer class="footer">
+  <button
+    mat-flat-button
+    class="btn"
+    routerLink="/home/personal"
+    routerLinkActive="active"
+  >
+    <mat-icon>person</mat-icon>
+  </button>
+
+  <div class="btn-add">
+    <button mat-fab (click)="addClick.next()">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+
+  <button
+    mat-flat-button
+    class="btn"
+    routerLink="/home/group"
+    routerLinkActive="active"
+  >
+    <mat-icon>group</mat-icon>
+  </button>
+</footer>

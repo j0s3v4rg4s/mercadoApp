@@ -1,0 +1,37 @@
+<h1 mat-dialog-title>Create a group</h1>
+
+<div class="content">
+  <mat-form-field>
+    <mat-label>Select a name</mat-label>
+    <input type="text" matInput [(ngModel)]="nameGroup" />
+  </mat-form-field>
+  <button
+    mat-raised-button
+    color="primary"
+    [disabled]="loadAdd || !nameGroup"
+    (click)="createGroup()"
+  >
+    create
+  </button>
+</div>
+
+<div class="content-divisor">
+  <span class="divisor"></span>
+  <span class="subtitle">or join a group</span>
+  <span class="divisor"></span>
+</div>
+<div class="content">
+  <mat-form-field>
+    <mat-label>Enter the group code</mat-label>
+    <input type="text" matInput [(ngModel)]="codeGroup" />
+  </mat-form-field>
+  <button
+    mat-raised-button
+    color="primary"
+    [disabled]="loadAdd || !codeGroup"
+    (click)="joinGroup()"
+  >
+    join
+  </button>
+  <mat-error>{{ error2 }}</mat-error>
+</div>

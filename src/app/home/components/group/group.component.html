@@ -1,0 +1,9 @@
+<app-layout title="My Group" (addClick)="openDialog()">
+  <div *ngFor="let item of $listGroup | async" class="content">
+    <span>{{ item.name }}</span>
+    <span class="id-group">{{ item.uid }}</span>
+    <button mat-icon-button [routerLink]="'/home/group/' + item.uid">
+      <mat-icon>keyboard_arrow_right</mat-icon>
+    </button>
+  </div>
+</app-layout>
