@@ -3,6 +3,8 @@
     <app-product
       *ngFor="let item of group?.products"
       [product]="item"
+      (addProduct)="addElement($event)"
+      (removeProduct)="removeElement($event)"
     ></app-product>
   </div>
 </app-layout>
